@@ -22,6 +22,49 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #2a211c; color: #bdae9d; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; background-color: #2a211c; color: #bdae9d; border-right: 1px solid #bdae9d; }
+td.sourceCode { padding-left: 5px; }
+pre, code { color: #bdae9d; background-color: #2a211c; }
+code > span.kw { color: #43a8ed; font-weight: bold; } /* Keyword */
+code > span.dt { text-decoration: underline; } /* DataType */
+code > span.dv { color: #44aa43; } /* DecVal */
+code > span.bn { color: #44aa43; } /* BaseN */
+code > span.fl { color: #44aa43; } /* Float */
+code > span.ch { color: #049b0a; } /* Char */
+code > span.st { color: #049b0a; } /* String */
+code > span.co { color: #0066ff; font-style: italic; } /* Comment */
+code > span.al { color: #ffff00; } /* Alert */
+code > span.fu { color: #ff9358; font-weight: bold; } /* Function */
+code > span.er { color: #ffff00; font-weight: bold; } /* Error */
+code > span.wa { color: #ffff00; font-weight: bold; } /* Warning */
+code > span.cn { } /* Constant */
+code > span.sc { color: #049b0a; } /* SpecialChar */
+code > span.vs { color: #049b0a; } /* VerbatimString */
+code > span.ss { color: #049b0a; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { } /* Variable */
+code > span.cf { color: #43a8ed; font-weight: bold; } /* ControlFlow */
+code > span.op { } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { font-weight: bold; } /* Preprocessor */
+code > span.at { } /* Attribute */
+code > span.do { color: #0066ff; font-style: italic; } /* Documentation */
+code > span.an { color: #0066ff; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.co { color: #0066ff; font-weight: bold; font-style: italic; } /* Comment */
+code > span.in { color: #0066ff; font-weight: bold; font-style: italic; } /* Information */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 <style type="text/css">
@@ -199,6 +242,71 @@ $(document).ready(function () {
 
 
 <p>Se proporcionara informacion sobre como construir una funcion de densidad.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## se leen primero los datos
+
+<span class="kw">library</span>(xtable)
+
+<span class="kw">print</span>(xtable<span class="op">::</span><span class="kw">xtable</span>(cars),<span class="dt">type=</span><span class="st">&quot;html&quot;</span>,<span class="dt">html.tableattributes=</span><span class="st">&quot;border=0&quot;</span>) ## Contruye la tabla</code></pre></div>
+<pre><code>## &lt;!-- html table generated in R 3.4.1 by xtable 1.8-2 package --&gt;
+## &lt;!-- Sun Feb 25 15:19:40 2018 --&gt;
+## &lt;table border=1&gt;
+## &lt;tr&gt; &lt;th&gt;  &lt;/th&gt; &lt;th&gt; speed &lt;/th&gt; &lt;th&gt; dist &lt;/th&gt;  &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 1 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 4.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 2.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 2 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 4.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 10.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 3 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 7.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 4.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 4 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 7.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 22.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 5 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 8.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 16.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 6 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 9.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 10.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 7 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 10.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 18.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 8 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 10.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 26.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 9 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 10.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 34.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 10 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 11.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 17.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 11 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 11.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 28.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 12 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 12.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 14.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 13 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 12.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 20.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 14 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 12.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 24.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 15 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 12.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 28.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 16 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 13.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 26.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 17 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 13.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 34.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 18 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 13.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 34.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 19 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 13.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 46.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 20 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 14.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 26.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 21 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 14.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 36.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 22 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 14.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 60.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 23 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 14.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 80.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 24 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 15.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 20.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 25 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 15.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 26.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 26 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 15.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 54.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 27 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 16.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 32.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 28 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 16.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 40.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 29 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 17.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 32.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 30 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 17.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 40.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 31 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 17.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 50.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 32 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 18.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 42.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 33 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 18.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 56.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 34 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 18.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 76.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 35 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 18.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 84.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 36 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 19.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 36.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 37 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 19.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 46.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 38 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 19.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 68.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 39 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 20.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 32.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 40 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 20.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 48.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 41 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 20.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 52.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 42 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 20.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 56.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 43 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 20.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 64.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 44 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 22.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 66.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 45 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 23.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 54.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 46 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 24.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 70.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 47 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 24.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 92.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 48 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 24.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 93.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 49 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 24.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 120.00 &lt;/td&gt; &lt;/tr&gt;
+##   &lt;tr&gt; &lt;td align=&quot;right&quot;&gt; 50 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 25.00 &lt;/td&gt; &lt;td align=&quot;right&quot;&gt; 85.00 &lt;/td&gt; &lt;/tr&gt;
+##    &lt;/table&gt;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">density</span>(cars<span class="op">$</span>speed))  ## Grafica la funcion de densidad</code></pre></div>
+<p><img src="about2_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(cars<span class="op">$</span>speed, <span class="dt">freq =</span> <span class="ot">FALSE</span>)
+<span class="kw">lines</span>(<span class="kw">density</span>(cars<span class="op">$</span>speed))</code></pre></div>
+<p><img src="about2_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
 
 
 

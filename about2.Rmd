@@ -3,3 +3,18 @@ title: "Como construir una funcion de Densidad"
 ---
 
 Se proporcionara informacion sobre como construir una funcion de densidad.
+
+
+```{r}
+
+## se leen primero los datos
+
+library(xtable)
+
+print(xtable::xtable(cars),type="html",html.tableattributes="border=0") ## Contruye la tabla
+
+plot(density(cars$speed))  ## Grafica la funcion de densidad
+
+hist(cars$speed, freq = FALSE)
+lines(density(cars$speed))
+```
