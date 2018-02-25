@@ -4,7 +4,6 @@ navbar:
   title: "Semillero Unal"
   left:
     - text: "Sobre mi"
-      icon: fab fa-avianex
       href: index.html
     - text: "Trabajos"
       icon: fal fa-balance-scale

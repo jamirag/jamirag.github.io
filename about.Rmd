@@ -14,11 +14,11 @@ A continuacion se presentaran algunos trabajos.
 <img src="Imagen 1.jpg" WIDTH=900 HEIGHT=900
 </center> 
 
-- [Taller - DiseÃ±o de Experimentos](https://drive.google.com/open?id=1ff7WUZfMQsD6OZFrzS4TSbNJClXf1vZC)
+- [Taller - Diseño de Experimentos](https://drive.google.com/open?id=1ff7WUZfMQsD6OZFrzS4TSbNJClXf1vZC)
 
 - [Taller - Trabajo Estudio de Tiempos](https://drive.google.com/open?id=1CRj67hzE8e-md-LNfsoG3m5VphdTfXIO)
 
-- [Caso simulado de gestiÃ³n de la innovaciÃ³n - Alpina](https://drive.google.com/open?id=1-sisPz2Q_rJ5U51Frof8C7S0ivpW9ym0)
+- [Caso simulado de gestion de la innovacion - Alpina](https://drive.google.com/open?id=1-sisPz2Q_rJ5U51Frof8C7S0ivpW9ym0)
 
 - [Trabajo - Modelos SARIMA](jamirag.github.io/Trabajo - Modelos SARIMA.pdf)
 
