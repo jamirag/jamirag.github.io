@@ -1,7 +1,8 @@
 ---
-title: "My Website"
+title: "Julian Andres Mira"
 ---
 
-Hello, Website!
+Estudiante de Ingenieria Industrial
 
 ## Hola mundo, Bienvenidos!!
+

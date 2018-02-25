@@ -1,13 +1,19 @@
 name: "My-Website"
 output_dir: "."
 navbar:
-  title: "Julian Mira"
+  title: "Semillero Unal"
   left:
-    - text: "Home"
+    - text: "Sobre mi"
       href: index.html
-    - text: "About"
+    - text: "Trabajos"
       href: about.html
+    - text: "Densidades"
+      href: about2.html
 output:
   html_document:
-    theme: journal
-    highlight: pygments
+    theme: flatly
+    highlight: espresso
+    
+    
+    
+    

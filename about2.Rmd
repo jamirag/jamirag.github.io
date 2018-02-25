@@ -1,0 +1,5 @@
+---
+title: "Como construir una funcion de Densidad"
+---
+
+Se proporcionara informacion sobre como construir una funcion de densidad.
