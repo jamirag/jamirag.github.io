@@ -6,11 +6,14 @@ navbar:
     - text: "Sobre mi"
       href: index.html
     - text: "Trabajos"
-      icon: fal fa-balance-scale
+      icon: fa-balance-scale
       href: about.html
-    - text: "Densidades"
-      icon: fab fa-drupal
-      href: about2.html
+    - text: "Aplicacion"
+      icon: fa-home
+      href: Aplicacion.html
+  right:
+    - icon: fa-github
+      href: https://github.com/jamirag
 output:
   html_document:
     theme: flatly

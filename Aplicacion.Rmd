@@ -1,0 +1,10 @@
+---
+title: "Aplicacion"
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::include_app("https://jamirag.shinyapps.io/AppSeries/",height="800px")
+```
+
+https://jamirag.shinyapps.io/AppSeries/

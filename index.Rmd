@@ -14,5 +14,5 @@ title: "Hola mundo, Bienvenidos!!"
 ## Julian Andres Mira
 
 
-soy Estudiante de Ingenieria Industrial de la facultad de minas en la Universidad Nacional de Colombia, vivo en la ciudad de Medellin.
-las areas donde encuentro mayor interes dentro de mi carrera son la logistica y la gestion de la cadena de suministro, el diseño industrial y el diseño experimental, mis hobbys son practicar deporte competitivo dentro de la universidad y carpinteria artesanal.
+Soy Estudiante de Ingenieria Industrial de la facultad de minas en la Universidad Nacional de Colombia, vivo en la ciudad de Medellin.
+Las areas donde encuentro mayor interes dentro de mi carrera son la logistica y la gestion de la cadena de suministro, el diseño industrial y el diseño experimental, mis hobbys son practicar deporte competitivo dentro de la universidad y carpinteria artesanal.
