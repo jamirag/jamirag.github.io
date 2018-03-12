@@ -3,8 +3,8 @@ title: "Aplicacion"
 runtime: shiny
 ---
 
-```{r setup, include=FALSE}
-knitr::include_app("https://jamirag.shinyapps.io/AppSeries/",height="800px")
-```
+# Aplicacion sobre series de tiempo
 
-https://jamirag.shinyapps.io/AppSeries/
+```{r, echo=FALSE}
+knitr::include_app("https://jamirag.shinyapps.io/AppSeries/",height = "900px")
+```

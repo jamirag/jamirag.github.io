@@ -23,6 +23,11 @@ A continuacion se presentaran algunos trabajos.
 - [Trabajo - Modelos SARIMA](jamirag.github.io/Trabajo - Modelos SARIMA.pdf)
 
 
+# PROYECTO SOBRE LA MEJORA EN LA RECOLECCION DEL CHONTADURO EN COLOMBIA
+
+![](SPI1_Poster.png)
+- [Proyecto - Mejora Recoleccion Chontaduro](jamirag.github.io/Trabajo3.pdf)
+
 
 
 
