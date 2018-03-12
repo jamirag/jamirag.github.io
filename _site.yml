@@ -4,12 +4,13 @@ navbar:
   title: "Semillero Unal"
   left:
     - text: "Sobre mi"
+      icon: fa-home
       href: index.html
     - text: "Trabajos"
-      icon: fa-balance-scale
+      icon: glyphicon-fire
       href: about.html
     - text: "Aplicacion"
-      icon: fa-home
+      icon: ion-social-freebsd-devil
       href: Aplicacion.html
   right:
     - icon: fa-github
